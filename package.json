@@ -1,0 +1,10 @@
+{
+  "fitbit": {
+    "appUUID": "deeb3cba-825b-403a-afb4-17392053e059",
+    "appType": "clockface",
+    "appDisplayName": "Big Flip Clock",
+    "iconFile": "resources/icon.png",
+    "wipeColor": "",
+    "requestedPermissions": []
+  }
+}

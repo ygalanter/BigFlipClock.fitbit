@@ -1,0 +1,12 @@
+.background {
+  viewport-fill: #003366;
+}
+
+.Yellow {
+  font-size: 64;
+  font-family: Colfax-Thin;
+  font-weight: bold;
+  text-length: 6;
+  letter-spacing: 8;
+  fill: fb-yellow;
+}
