@@ -5,6 +5,11 @@
     "appDisplayName": "Big Flip Clock",
     "iconFile": "resources/icon.png",
     "wipeColor": "",
-    "requestedPermissions": []
+    "requestedPermissions": [],
+    "i18n": {
+      "en": {
+        "name": "Big Flip Clock"
+      }
+    }
   }
 }

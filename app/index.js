@@ -54,7 +54,7 @@ function changeTime(position, oldTime, newTime) {
     let bottom_anim = document.getElementById(`${position}_bottom_anim`);
     let top_perm_img = document.getElementById(`${position}_top_perm_img`);
     let bottom_perm_img = document.getElementById(`${position}_bottom_perm_img`);
-
+  
     //chanhing time
     top_perm_img.href = `digits/${newTime}top.png`; //new
     bottom_anim_img.href = `digits/${newTime}bottom.png`; //new
@@ -69,8 +69,8 @@ function changeTime(position, oldTime, newTime) {
     top_anim_img.href = `digits/${oldTime}top.png`; //old
     bottom_perm_img.href = `digits/${oldTime}bottom.png`; //old
     bottom_anim_img.style.display = "none";
-    top_anim.animate = true;
-    setTimeout(function(){bottom_anim_img.style.display = "inline";bottom_anim.animate = true},1000);
+    top_anim.animate('enable');
+    setTimeout(function(){bottom_anim_img.style.display = "inline";bottom_anim.animate('enable')},1000);
 
     
 }
@@ -120,16 +120,16 @@ function updateClock() {
   }
   
   // displaying short month name in English
-  monthlbl.innerText = dtlib.getMonthNameShort(dtlib.LANGUAGES.ENGLISH, today.getMonth());
+  monthlbl.text = dtlib.getMonthNameShort(dtlib.LANGUAGES.ENGLISH, today.getMonth());
   
   // displaying 0-prepended day of the month
-  daylbl.innerText = dtlib.zeroPad(today.getDate());
+  daylbl.text = dtlib.zeroPad(today.getDate());
   
   // displaying shot day of the week in English
-  dowlbl.innerText = dtlib.getDowNameShort(dtlib.LANGUAGES.ENGLISH, today.getDay());
+  dowlbl.text = dtlib.getDowNameShort(dtlib.LANGUAGES.ENGLISH, today.getDay());
   
   // displaying AM/PM or 24H
-  ampmlbl.innerText = dtlib.getAmApm(today.getHours());
+  ampmlbl.text = dtlib.getAmApm(today.getHours());
   
   // resetting screen awoke flag
   screenJustAwoke = false;
@@ -171,4 +171,5 @@ me.onunload = () => {
 // on display on/off set the flag
 display.onchange = () => {
   screenJustAwoke = display.on;
+  updateClock();
 }
