@@ -28,7 +28,7 @@ var dtlib = {
   
   //array of arrays, each second level array per language
   dowNamesLong: [
-    ["SUNDAY","MONDAY","TUEDAY","WEDNESDAY","THURSDAY","FRIDAY","SATURDAY"]
+    ["SUNDAY","MONDAY","TUESDAY","WEDNESDAY","THURSDAY","FRIDAY","SATURDAY"]
   ],
   
   // Get short name of the month

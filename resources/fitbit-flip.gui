@@ -1,0 +1,16 @@
+    <symbol id="fitbit-flip"> 
+
+        <image class="fitbit-static-image" x="0" y="0" />
+        <image class="fitbit-static-image" x="0" />
+
+        <image class="fitbit-flip-image" x="0" y="0">
+           <animate class="fitbit-anim" attributeName="y" from="0" to="67" begin="enable" dur="1" final="keep" />
+           <animate class="fitbit-anim" attributeName="height" from="67" to="0" begin="enable" dur="1" final="keep" />
+        </image>
+    
+           
+        <image class="fitbit-flip-image" x="0">
+            <animate class="fitbit-anim" attributeName="height" from="0" to="67" begin="enable" dur="1" final="keep" />
+        </image> 
+       
+    </symbol>

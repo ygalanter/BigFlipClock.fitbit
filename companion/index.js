@@ -1,18 +1,7 @@
-import * as messaging from "messaging";
 import { settingsStorage } from "settings";
+import asap from "fitbit-asap/companion";
 
 console.log("Companion Started");
-
-// Message socket opens
-messaging.peerSocket.onopen = () => {
-  console.log("Companion Socket Open");
-  //restoreSettings();
-};
-
-// Message socket closes
-messaging.peerSocket.close = () => {
-  console.log("Companion Socket Closed");
-};
 
 // A user changes settings
 settingsStorage.onchange = evt => {
@@ -20,7 +9,7 @@ settingsStorage.onchange = evt => {
     key: evt.key,
     newValue: evt.newValue
   };
-  sendVal(data);
+  asap.send(data);
 };
 
 // Restore any previously saved settings and send to the device
@@ -32,14 +21,7 @@ function restoreSettings() {
         key: key,
         newValue: settingsStorage.getItem(key)
       };
-      sendVal(data);
+      asap.send(data);
     }
-  }
-}
-
-// Send data to device using Messaging API
-function sendVal(data) {
-  if (messaging.peerSocket.readyState === messaging.peerSocket.OPEN) {
-    messaging.peerSocket.send(data);
   }
 }

@@ -1,0 +1,26 @@
+<svg class="background">
+  
+   <g transform="scale(0.86)">
+      <g transform="translate(1,50)">
+        <use href="#fitbit-flip" id="hour1" x="0" y="58" />
+        <use href="#fitbit-flip" id="hour2" x="86" y="58" />
+        <use href="#fitbit-flip" id="minute1" x="176" y="58" />
+        <use href="#fitbit-flip" id="minute2" x="262" y="58" />
+    </g>
+  </g>
+  
+  
+    
+    <!-- Date   -->
+    <text id = "month" x="4" y="58"  class="Yellow"  text-anchor = "start" />   
+    <text id = "day" x="296" y="58"  class="Yellow"  text-anchor = "end" />   
+  
+ 
+  
+    <!-- DOW and AM/PM   -->
+    <text id = "dow" x="4" y="286"  class="Yellow"  text-anchor = "start" />   
+    <text id = "ampm" x="296" y="286"  class="Yellow"  text-anchor = "end" />    
+  
+ 
+  
+</svg>
