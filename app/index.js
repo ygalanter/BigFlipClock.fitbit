@@ -26,6 +26,7 @@ let timeh1 = 0;
 let timeh2 = 0;
 let timem1 = 0;
 let timem2 = 0;
+let initialized = false;
 
 // whether to skip time animation and switch to new time fast
 const ANIMATION_DISABLE_ALWAYS = 0
@@ -80,22 +81,22 @@ function updateClock() {
   let m1 = Math.floor(mins/10);
   let m2 = mins % 10;
   
-  if (timeh1 != h1) { 
+  if (timeh1 != h1 || !initialized) { 
     changeTime(hour1, timeh1, h1)
     timeh1 = h1;
   }
   
-  if (timeh2 != h2) {
+  if (timeh2 != h2 || !initialized) {
     changeTime(hour2, timeh2, h2);
     timeh2 = h2;
   }
   
-  if (timem1 != m1) {
+  if (timem1 != m1 || !initialized) {
     changeTime(minute1, timem1, m1)  
     timem1 = m1;
   }
   
-  if (timem2 != m2) {
+  if (timem2 != m2 || !initialized) {
     changeTime(minute2, timem2, m2)
     timem2 = m2;
   }
@@ -112,8 +113,9 @@ function updateClock() {
   // displaying AM/PM or 24H
   ampmlbl.text = dtlib.getAmApm(today.getHours());
   
-  // resetting screen awoke flag
+  // resetting screen awoke & initialized flag
   screenJustAwoke = false;
+  initialized =true;
 } 
  
 // assigning clock tick event handler
